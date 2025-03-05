@@ -1,0 +1,149 @@
+\documentclass[]{article}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[parfill]{parskip}
+\usepackage{titlesec}
+
+\titleformat{\section}[display]
+{\normalfont\normalsize\bfseries\centering}{Článek \thesection.}{-0.5em}{}
+\titleformat{\subsection}
+{\normalfont\normalsize\itshape}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\normalsize\itshape}{\thesubsubsection.}{1em}{}
+
+\renewcommand\thesection{\Roman{section}}
+\renewcommand\thesubsection{\thesection.\Roman{subsection}}
+
+\setcounter{secnumdepth}{5}
+
+%opening
+\title{
+	{\textbf{Smlouva o dílo}}
+}
+
+\date{}
+
+% Definice odesílatele a příjemce
+\newcommand{\objednatel}{
+	\begin{tabular}{@{}ll@{}}
+		\textbf{Společnost}: & Grow technologies s.r.o.\\
+		se sídlem: & Školská 689/20, Nové Město, 110 00 Praha 1\\
+		IČO: & 09506225\\
+		zastoupená: & Janem Starým, jednatelem\\
+		e-mail: & ledmegrow@gmail.com \\
+		(dále jen \textbf{"Objednatel"})\\
+	\end{tabular}
+}
+
+\newcommand{\zhotovitel}{
+	\begin{tabular}{@{}ll@{}}
+		\textbf{Jméno a příjmení}: & Kevin Daněk\\
+		se sídlem: & Okružní 2098, 470 01 Česká Lípa\\
+		IČO: & 21886407\\
+		bankovní spojení: & 2702946879/2010 \\
+		e-mail: & kevin.danek@outlook.cz \\
+		(dále jen \textbf{"Zhotovitel"})\\
+	\end{tabular}
+}
+
+\begin{document}
+
+\maketitle
+
+\objednatel
+
+\zhotovitel
+
+uzavírají níže uvedeného dne, měsíce a roku dle vzájemné shody podle §2586 a násl. zákona č. 89/2012 Sb., občanského zákoníku, ve znění pozdějších předpisů, tuto smlouvu o dílo:
+
+\section{Předmět smlouvy}
+
+\begin{enumerate}
+	\item Předmětem této smlouvy je programové řešení skladového systému s následujícími funkcemi (dále jenom "dílo"):
+	\begin{enumerate}
+		\item Chaosové zaskladňování
+		\item Evidence počtu položek, ceny a pozic
+		\item Synchronizace skladu na expediční systém
+		\item Synchronizace skladu na všechny eshopy
+		\item Možnost částečné inventury
+		\item Ovládání čtečkou (EAN kódy)
+		\item Možnost sadových produktů a jejich správná evidence/vyskladňování
+	\end{enumerate}
+	\item Smlouvou o dílo se zhotovitel zavazuje provést na svůj náklad a nebezpečí pro objednatele dílo a objednatel se zavazuje dílo převzít a zaplatit cenu.
+	\item Tato smlouva je uzavřena na dobu určitou do doby splnění závazků podle této smlouvy a předání díla, maximálně však do 31. 12. 2024.
+	\item Licence za užívání díla je poskytnuta bezplatně.
+\end{enumerate}
+
+\section{Komunikace a závaznost elektronické komunikace}
+\label{clanek:komunikace}
+\begin{enumerate}
+	\item Smluvní strany se dohodly, že veškerá komunikace týkající se této smlouvy, včetně jakýchkoli požadavků, změn, dodatků, či specifikací týkajících se díla a jeho předání, může probíhat prostřednictvím elektronické pošty (e-mail).
+	\item Smluvní strany se také dohodly, že komunikace zhotovitele s pověřenými osobami objednatele týkající se specifikace požadavků na zhotovení díla, může probíhat pomocí libovolných elektronických prostředků.
+	\item Elektronická komunikace mezi smluvními stranami, včetně jejich pověřených osob, je považována za závaznou a má stejnou právní váhu jako komunikace písemná.
+	\item Pokud je pro platnost určitého ujednání nebo změny potřeba potvrzení druhé strany, bude toto potvrzení považováno za doručené a účinné, jakmile bude příjem potvrzen zpětným e-mailem či zprávou od druhé smluvní strany. Absence potvrzení nepředstavuje souhlas.
+	\item E-mailová zpráva se považuje za doručenou druhé smluvní straně okamžikem, kdy je doručena na server poskytovatele e-mailových služeb druhé smluvní strany, což se dokládá zprávou o doručení (pokud je tato funkce dostupná).
+\end{enumerate}
+
+\section{Předání díla}
+\begin{enumerate}
+	\item Dílo je dokončeno, je-li předvedena jeho způsobilost sloužit svému účelu. Objednatel převezme dokončené dílo s výhradami, nebo bez výhrad.
+	\item Dokončení je prokázáno sjednanou zkouškou.
+	\item Provedení zkoušky a její průběh je zaznamenáno v zápise, včetně případných výhrad.
+	\item Objednatel je povinen dílo při předání náležitě zkontrolovat a vytknout zhotoviteli případné vady. Neučiní-li tak, platí, že dílo nemá žádné zjevné vady.
+	\item Není-li objednatel přítomen, převezme za něj dílo objednatelem pověřená osoba, která bude uvedena v předávacím protokolu a zápisu o vykonané zkoušce.
+\end{enumerate}
+
+\section{Odpovědnost za vady a záruka}
+\begin{enumerate}
+	\item Dílo má vadu, pokud neodpovídá smlouvě a sjednané specifikaci.
+	\item Zhotovitel odpovídá za vady, které má dílo v době jeho předání objednateli.
+	\item Zhotovitel poskytuje na dílo záruku v době 24 měsíců od doby řádného převzetí díla objednatelem. 
+	\item Objednatel je oprávněn reklamovat vady díla u zhotovitele po dobu trvání
+	záruční doby.
+	\item Během této záruční doby je zhotovitel povinen odstranit na vlastní náklady všechny vady, které se na díle vyskytnou, pokud objednatel tyto vady oznámí bez zbytečného odkladu po jejich zjištění.
+	\item Objednatel se zavazuje poskytnout zhotoviteli při odstraňování vad díla potřebnou součinnost.
+	\item Zhotovitel neodpovídá za vady vzniklé v důsledku
+		\begin{enumerate}
+			\item Neoprávněného zásahu do díla, čímž se rozumí jakýkoliv zásah, modifikace, úprava nebo jiné změny v díle provedené objednatelem či třetí osobou bez předchozí konzultace se zhotovitelem.
+			\item Aktualizace operačního systému či infrastruktury, čímž se rozumí aktualizace softwarového prostředí nebo změnami v infrastruktuře, které nebyly zhotovitelem schváleny nebo nebyly v době předání díla známy.
+		\end{enumerate}
+\end{enumerate}
+
+
+\section{Cena a platební podmínky}
+\begin{enumerate}
+	\item Cena díla je určena počtem odpracovaných hodin. Hodinová sazba činí 250 Kč (slovy dvě stě padesát korun českých).
+	\item Odpracované hodiny jsou zaznamenávány zhotovitelem.
+	\item Cenu díla uhradí objednatel na základě účetního dokladu (faktury) po předání díla bezhotovostně na bankovní účet zhotovitele.
+	\item V příloze faktury bude výpis odpracovaných hodin zhotovitelem a kopie předávacího protokolu, jehož součástí je i zápis o provedené zkoušce.
+	\item Zhotovitel není plátcem DPH.
+\end{enumerate}
+
+\section{Práva a povinnosti smluvních stran}
+\begin{enumerate}
+	\item Objednatel má právo kontrolovat provádění díla. Zjistí-li, že zhotovitel porušuje svou povinnost, může požadovat, aby zhotovitel zajistil nápravu a prováděl dílo řádným způsobem. Neučiní-li tak zhotovitel ani v přiměřené době, může objednatel odstoupit od smlouvy, vedl-li by postup zhotovitele nepochybně k podstatnému porušení smlouvy.
+	\item Zhotovitel se zavazuje, že dílo bude provedeno do maximální ujednané lhůty.
+	\item Objednatel se zavazuje poskytovat zhotoviteli součinnost k provedení díla, a to ve lhůtě, jíž mu zhotovitel určí. 
+	\item Zhotovitel je povinen vykonávat činnosti, ke kterým se zavázal v této smlouvě osobně, případně prostřednictvím
+	pověřených subjektů, s jejichž pomocí bude realizovat předmět smlouvy a za jejichž činnost nese odpovědnost, jako by činnost vykonával sám.
+	\item Zhotovitel se zavazuje, že bude zachovávat mlčenlivost o veškerých skutečnostech obchodní, finanční či účetní
+	povahy, které se dozvěděl v době trvání této smlouvy, a které se týkají objednatele a dalších osob ve vztahu
+	k objednateli. Povinnost zachovávat mlčenlivost má zhotovitel nejen po dobu trvání smlouvy, ale i po ukončení
+	smlouvy.
+	\item Zhotovitel se zavazuje, že pokud v souvislosti s realizací této smlouvy přijde on, jeho pověření zaměstnanci nebo osoby, které pověřil prováděním díla dle této smlouvy, do styku s osobními nebo citlivými údaji ve smyslu zákona č. 101/2000 Sb., o ochraně	osobních údajů, učiní veškerá opatření, aby nedošlo k neoprávněnému nebo nahodilému přístupu k těmto údajům, k jejich změně, zničení či ztrátě, neoprávněným přenosům, k jejich jinému neoprávněnému zpracování, jakož aby i jinak neporušil zákon č.101/2000 Sb. Zhotovitel je povinen zachovávat mlčenlivost o osobních údajích a o bezpečnostních opatřeních, jejichž zveřejnění by ohrozilo zabezpečení osobních údajů. Povinnost mlčenlivosti trvá i po ukončení této smlouvy.
+	\item Povinnost mlčenlivosti zhotovitele se vztahuje ve stejném rozsahu i na další osoby, které zhotovitel při plnění svých povinností podle této smlouvy použije.
+	\item Smluvní strany mohou od smlouvy odstoupit, pokud dojde druhou smluvní stranou k porušení ustanovení v této smlouvě.
+	\item Smlouva se vyhotovuje ve dvou výtiscích, vždy jedna pro každou smluvní stranu.
+	\item Ustanovení této smlouvy mohou být upraveny písemnou dohodou obou smluvních stran dle článku \ref{clanek:komunikace}.
+
+\end{enumerate}
+
+\begin{figure*}[!b]
+	\begin{tabular}{@{}p{2in}p{2in}p{2in}@{}}
+		V České lípě dne & \hrulefill & \hrulefill \\
+		& \textbf{Kevin Daněk} & \textbf{Jan Starý} \\
+		& (zhotovitel) & (objednatel) \\
+	\end{tabular}
+\end{figure*}
+
+
+\end{document}
