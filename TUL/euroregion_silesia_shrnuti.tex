@@ -1,0 +1,192 @@
+\documentclass[a4paper,12pt,twoside,FP]{article}
+% tento dokument používá balíky specifické pro XeLaTeX a lze jej přeložit
+% jen XeLaTeXem
+
+\newcommand{\verze}{2.3}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{czech}
+
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{float}
+
+\usepackage{xltxtra}
+\usepackage{tabularx}
+
+\usepackage{makeidx}
+\makeindex
+
+% živé odkazy v PDF
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=tul, urlcolor=tul, citecolor=tul}
+\hypersetup{pdftitle={Shrnutí mikroprojektů v euroregionu Silesia}}
+
+\usepackage[fonts,noheader]{tul}
+\TULname{Pavel Satrapa}
+\TULphone{+420\,485\,351\,234}
+\TULmail{Pavel.Satrapa@tul.cz}
+%\TULposition{prorektor pro informatiku}
+
+\pagestyle{TULheader}
+
+% definice příkazů a prostředí specifických pro tento dokument
+\newcommand{\cmdfont}[1]{\texttt{\color{\tulcolor}#1}}
+\newcommand{\cmdnoindex}[1]{\cmdfont{\textbackslash #1}}
+\newcommand{\cmd}[1]{\cmdnoindex{#1}\index{#1@\textbackslash #1}}
+\newcommand{\demobox}{\raisebox{-.20ex}{\rule{1em}{1em}}}
+
+\usepackage{enumitem}
+\newlist{itemize*}{itemize}{2}
+\setlist[itemize*]{itemsep=3pt, parsep=3pt, label=$\bullet$}
+\setlist[itemize*,2]{label={--}}
+
+\usepackage{parskip}
+\sloppy
+\widowpenalty=10000
+\clubpenalty=10000
+
+\newcommand{\cmddemo}[1]{\bigskip\parbox[c]{3.9cm}{\cmd{#1}}\parbox[c]{10cm}{\csname #1\endcsname}\bigskip}
+
+\begin{document}
+
+\TULfancytitlepage{Shrnutí mikroprojektů v euroregionu Silesia}
+{Lucie Smrčková, Simona Šulcová, Aja Bohatá, Ondřej Málek, Kateřina Najmannová, Tereza Skálová}
+{Liberec 2025}
+
+\section*{Sběr dat o euroregionu}
+Získávání informací o euroregionu Silesia bylo poměrně náročné a vyžadovalo systematický přístup. Nejprve jsme se snažili potřebná data najít na oficiálním webu euroregionu. Ačkoli zde bylo k dispozici mnoho informací, tak jejich rozložení na webových stránkách nám ztěžovalo jakékoliv hledání. Abychom proces urychlili, rozhodli jsme se kontaktovat kancelář euroregionu a zavolat panu manažerovu Bc. Radku Ivanovi. Po výměnně několika e-mailů jsme doufali v souhrnný dokument. Místo toho jsme však byli nasměrováni na zápisy jednání euroregionálního řídícího výboru, které obsahovaly přehledy projednávaných mikroprojektů. Tento seznam nám poskytl výchozí bod pro další práci.
+
+Kolega Bc. Kevin Daněk z navazujícího magisterského studia aplikované informatiky nám pomohl s technickou částí analýzy dokumentů. Vysvětlil, že původní přehledy mikroprojektů byly organizovány podle jednotlivých jednání, na nichž byly schváleny, a rozděleny do tabulek ve formátu PDF podle typu projektu. Nejprve data manuálně převedl do textového formátu a data očistil od šumu. Následně stáhl a sloučil zápisy z jednání, aby mohl vytvořit jednotnou databázovou tabulku.
+
+Po uložení těchto dat do databázového systému napsal SQL dotazy, pomocí nichž zjistil počet projektů jednotlivých žadatelů a partnerů. Díky této analýze bylo možné identifikovat nejčastější subjekty zapojené do mikroprojektů a získat přehled o celkovém rozložení projektů v euroregionu. Tento přístup byl podobný práci s kontingenčními tabulkami v běžném tabulkovém procesoru, avšak umožnil detailnější zpracování a přesnější analýzu.
+\clearpage
+
+\section*{Výsledky analýzy}
+Na základě zpracovaných dat jsme provedli podrobnou analýzu mikroprojektů v euroregionu Silesia. Zaměřili jsme se na identifikaci nejaktivnějších subjektů z hlediska počtu podaných žádostí, nejčastěji zapojených partnerů a také na subjekty, které spolupracují nejvíce napříč projekty. Výsledky této analýzy jsou shrnuty v následujících tabulkách, které poskytují přehled o klíčových aktérech v rámci euroregionu a jejich vzájemných vazbách.
+
+\bgroup
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.25}%  1 is the default, change whatever you need
+	\begin{tabular}{|l|l|}
+		\hline
+		\textbf{Žadatel} & \textbf{Počet projektů} \\
+		\hline
+		Gmina Kornowac & 30 \\
+		\hline
+		Miasto Racibórz & 21 \\
+		\hline
+		Gmina Krzyżanowice & 16 \\
+		\hline
+		Statutární město Ostrava & 14 \\
+		\hline
+		Miasto Wodzisław Śląski & 13 \\
+		\hline
+		Gmina Lyski & 12 \\
+		\hline
+	\end{tabular}
+	
+	\caption{Nejčastější žadatelů v euroregionu Silesia}
+\end{table}
+\egroup
+
+\bgroup
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.25}%  1 is the default, change whatever you need
+	\begin{tabular}{|l|l|}
+		\hline
+		\textbf{Partner} & \textbf{Počet projektů} \\
+		\hline
+		Miasto Racibórz & 16 \\
+		\hline
+		Obec Šilheřovice & 14 \\
+		\hline
+		Obec Bolatice & 12 \\
+		\hline
+		Město Odry & 12 \\
+		\hline
+		Statutární město Ostrava & 11 \\
+		\hline
+		Obec Vřesina & 11 \\
+		\hline
+		Gmina Krzyżanowice & 11 \\
+		\hline
+		Gmina Kietrz & 10 \\
+		\hline
+	\end{tabular}
+	
+	\caption{Nejčastější partneři v euroregionu Silesia}
+\end{table}
+\egroup
+
+\bgroup
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.25}%  1 is the default, change whatever you need
+	\begin{tabular}{|p{0.3\linewidth}|p{0.3\linewidth}|p{0.3\linewidth}|}
+		\hline
+		\textbf{Žadatel} & \textbf{Partner} & \textbf{Společné projekty} \\
+		\hline
+		Gmina Krzyżanowice & Obec Šilheřovice & 12 \\
+		\hline
+		Gmina Kornowac & Obec Vřesina & 10 \\
+		\hline
+		Gmina Lyski & Obec Darkovice & 9 \\
+		\hline
+		Miasto Wodzisław Śląski & Statutární město Ostrava & 7 \\
+		\hline
+		Stowarzyszenie LYSKOR & Obec Bolatice & 7 \\
+		\hline
+		Gmina Kornowac & Základní škola a Mateřská škola Opava - Komárov - příspěvková organizace & 6 \\
+		\hline
+	\end{tabular}
+	
+	\caption{Společné projekty subjektů v euroregionu Silesia}
+\end{table}
+\egroup
+
+\bgroup
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{1.25}%  1 is the default, change whatever you need
+	
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Tématický okruh} & \textbf{Počet projektů} \\
+		\hline
+		Turistika a příroda  & 66  \\
+		\hline
+		Historie, kultura a tradice & 114  \\
+		\hline
+		Sport a životní styl & 63  \\
+		\hline
+		Vzdělávání a věda & 64  \\
+		\hline
+		Bezpečnost, hasiči a krizové řízení & 25  \\
+		\hline
+		Společenská integrace a komunitní aktivity & 41  \\
+		\hline
+		Umění  & 39  \\
+		\hline
+		Ekologie  & 17  \\
+		\hline
+		Infrastruktura a regionální rozvoj & 21  \\
+		\hline
+		Gastronomie & 24  \\
+		\hline
+	\end{tabular}
+	
+	\caption{Počet projektů v tématických okruzích}
+\end{table}
+\egroup
+
+\clearpage
+\section*{Reference}
+\begin{itemize}
+	\item EUROREGION SILESIA. Euroregion Silesia. Online. Euroregion Silesia. Dostupné z: https://euroregion-silesia.cz/. [cit. 2025-03-03].
+\end{itemize}
+
+\end{document}
+
