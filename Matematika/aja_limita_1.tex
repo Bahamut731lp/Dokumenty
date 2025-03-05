@@ -1,0 +1,144 @@
+\documentclass[]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\begin{document}
+	
+	Určete defininční obor funkce $f(x) = \frac{2x^2-6x-8}{1-x-2x^2}$ a nalezněte limitu této funkce v bodech
+	\begin{itemize}
+		\item $x = -1$
+		\item $x = \frac{1}{2}$
+		\item $x = \infty$
+	\end{itemize}
+			
+	\section{Definiční obor}
+	Definiční obor funkce je taková množina čísel, pro kterou dává předpis funkce nějaký výsledek. Cílem tady je najít takové body či intervaly, pro které by funkce nemohla být vypočítaná. Při hledání definičního oboru postupujeme takto:
+	\begin{enumerate}
+		\item Předpis si rozebereme na jednotlivé funkce
+		\item Ke každé jednotlivé funkci si určíme definiční obor
+		\item Definiční obor výsledné funkce je průnik těchto menších definičních oborů - neboli všechny funkce musí dát nějaký výsledek
+	\end{enumerate}
+	
+	V tomto příkladě se funkce $f(x)$ skládá ze tří funkcí:
+	\begin{enumerate}
+		\item Polynom (mnohočlen) $2x^2-6x-8$
+		\item Polynom (mnohočlen) $1-x-2x^2$
+		\item Lomennou funkci (zlomek) $\frac{P}{Q}$
+	\end{enumerate}
+	
+	Pro polynomy (mnohočleny) jsou definičním oborem reálná čísla. Do nich můžeme dosadit cokoliv a stejně nám výjde výsledek. Pro lomennou funkci, neboli zlomek, máme jedno omezení, a to je, že jmenovatel se nesmí rovnat nule. Ve jmenovateli máme mnohočlen $1-x-2x^2$, takže musíme zjistit, kdy tohle vychází nula, a to z definičního oboru celé té funkce $f(x)$ odebrat. Řešíme tak kvadratickou rovnici a hledáme její dva kořeny $x_1$ a $x_2$, což tady jde udělat buďto chytrým vytýkáním a nebo přes diskriminant.
+	
+	\begin{align*}
+		1-x-2x^2 &= 0\\
+		2x^2 +x - 1 &= 0 \\
+		\\
+		x_1, x_2 &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+		x_1, x_2 &= \frac{-1 \pm \sqrt{1 - 4\cdot2\cdot(-1)}}{2\cdot2} \\
+		x_1, x_2 &= \frac{-1 \pm \sqrt{1 + 8}}{4} \\
+		x_1, x_2 &= \frac{-1 \pm \sqrt{9}}{4} \\
+		x_1, x_2 &= \frac{-1 \pm 3}{4} \\
+		\\
+		x_1 &= \frac{-1 + 3}{4}\\
+		x_1 &= \frac{2}{4}\\
+		x_1 &= \frac{1}{2} \\
+		\\
+		x_2 &= \frac{-1 - 3}{4}\\
+		x_2 &= \frac{-4}{4}\\
+		x_2 &= -1 \\
+	\end{align*}
+	
+	Nyní víme, že mnohočlen $1-x-2x^2$ výjde nula právě když je $x$ buďto $\frac{1}{2}$ nebo $-1$, takže definiční obor celé funkce $f(x)$ jsou reálná čísla bez bodů $x = \frac{1}{2}$ a $x = -1$, protože v těchto bodech by byla ve jmenovateli nula a to není definováno.
+	
+	$$D(f) = \mathbb{R} \setminus \left\{-1, \frac{1}{2}\right\} $$
+	
+	\section{Vlastní limity}
+	Vlastní limity jsou takové limity, kde se $x$ neblíží k nekonečnu, ale k nějakému reálnému číslu. V tomto případě máme řešíme dvě vlastní limity, a to v bodech $x = -1$ a $x = \frac{1}{2}$. Obojí jsou body nespojitosti, neboli body, které jsme vyndavali z definičního oboru. To znamená, že výsledek nepůjde získat prostým dosazením:
+	
+	\begin{align*}
+		\lim_{x \to -1} \frac{2x^2-6x-8}{1-x-2x^2} &= \lim_{x \to -1} \frac{2(-1)^2-6(-1)-8}{1-(-1)-2(-1)^2} \\
+		&= \lim_{x \to -1} \frac{2 + 6 - 8}{1+1-2} \\
+		&= \lim_{x \to -1} \frac{0}{0} \\
+		\\
+		\lim_{x \to \frac{1}{2}} \frac{2x^2-6x-8}{1-x-2x^2} &= \lim_{x \to \frac{1}{2}} \frac{2(\frac{1}{2})^2-6(\frac{1}{2})-8}{1-(\frac{1}{2})-2(\frac{1}{2})^2} \\
+		&= \lim_{x \to \frac{1}{2}} \frac{2 \cdot \frac{1}{4} + 6 \frac{1}{2} - 8}{1 - \frac{1}{2} - 2 \frac{1}{4}} \\
+		&= \lim_{x \to \frac{1}{2}} \frac{\frac{1}{2} + 3 - 8}{1 - \frac{1}{2} - \frac{1}{2}} \\
+		&= \lim_{x \to \frac{1}{2}} \frac{-\frac{9}{2}}{0}
+	\end{align*}
+	
+	V případě $x=-1$ nám výjde neurčitý výraz $\frac{0}{0}$. Kdykoliv výjde takovýhle neurčitý výraz ($\frac{0}{0}$ nebo $\frac{\infty}{\infty}$), znamená to, že je potřeba provést nějaké úpravy ve zlomku a vyčíslit limitu až po nich. V druhém případě nám vyšel případ $\frac{a}{0}$, což zase naznačuje, že je v daném bodě svislá asymptota (čára, ke které se funkce blíží, ale nikdy tam nemá svojí hodnotu).
+	
+	Pojďme vyřešit ten první výraz. $\frac{0}{0}$ značí potřebu úpravu limity. Zde máme na výběr \textbf{vhodně vytknout a zkrátit} něco z čitatele i jmenovatele, a nebo použít \textbf{L'Hospitalovo pravidlo}. Zde záleží, zda-li jste už L'Hospitalovo pravidlo dělali nebo ne. Pokud jste ho nedělali, tak skipni další část.
+	
+	\subsection{Použití L'hospitalova pravidla}
+	L'Hospitalovo pravidlo říká, že za určitých podmínek lze limitu, která vychází ve tvaru $\frac{0}{0}$ nebo $\frac{\infty}{\infty}$ upravit tak, že čitatele a jmenovatele nahradíme jeho příslušnými derivacemi.
+	\begin{align*}
+		\lim \frac{P(x)}{Q(x)} &= \lim \frac{\frac{d}{dx}P(x)}{\frac{d}{dx}Q(x)}
+	\end{align*}
+	
+	Tyto derivace musí samozřejmě existovat a celkový výsledek musí dávat smysl.
+	
+	\begin{align*}
+		\lim_{x \to -1} \frac{2x^2-6x-8}{1-x-2x^2} &= \lim_{x \to -1} \frac{4x-6}{-4x-1} \\
+		&= \lim_{x \to -1} \frac{-4-6}{4-1} \\
+		&= \lim_{x \to -1} \frac{-10}{3} \\
+		&= \frac{-10}{3}
+	\end{align*}
+	
+	\subsection{Použití vytýkání a krácení}
+	Zde potřebujeme naše polynomy dostat do tvaru součinu členů, abychom mohli krátit. Čitatele lze vytknout pomocí viettových vzorců, ale u jmenovatele si musíme pomoci fíglem s přičtením a odečtením jednoho a toho samého čísla.
+	
+	\begin{align*}
+		\lim_{x \to -1} \frac{2x^2-6x-8}{1-x-2x^2} &= \lim_{x \to -1} \frac{2\cdot(x^2-3x-4)}{-1 \cdot (2x^2 + x - 1)} \\
+		&= \lim_{x \to -1} \frac{2\cdot(x^2-3x-4)}{-2 \cdot (x^2 + \frac{x}{2} - \frac{1}{2})} \\
+		&= - \lim_{x \to -1} \frac{x^2-3x-4}{x^2 + \frac{x}{2} - \frac{1}{2}} \\
+		&= - \lim_{x \to -1} \frac{(x + 1) \cdot (x - 4)}{x^2 + \frac{x}{2} - \frac{1}{2}} \\
+		&= - \lim_{x \to -1} \frac{(x + 1) \cdot (x - 4)}{x^2 + \frac{x}{2} + \frac{x}{2} - \frac{x}{2} - \frac{1}{2}} \\
+		&= - \lim_{x \to -1} \frac{(x + 1) \cdot (x - 4)}{x^2 + x - \frac{x}{2} - \frac{1}{2}} \\
+		&= - \lim_{x \to -1} \frac{(x + 1) \cdot (x - 4)}{x\cdot(x + 1) - \frac{1}{2}\cdot(x + 1)} \\
+		&= - \lim_{x \to -1} \frac{(x + 1) \cdot (x - 4)}{(x + 1) \cdot (x - \frac{1}{2})} \\
+		&= - \lim_{x \to -1} \frac{x - 4}{x - \frac{1}{2}} \\
+		&= - \lim_{x \to -1} \frac{-1 - 4}{-1 - \frac{1}{2}} \\
+		&= - \frac{-5}{-\frac{3}{2}} \\
+		&= - \frac{5}{\frac{3}{2}} \\
+		&= - \frac{5}{1} : \frac{3}{2} \\
+		&= - \frac{5}{1} \cdot \frac{2}{3} \\
+		&= - \frac{10}{3}\\
+	\end{align*}
+	
+	\pagebreak
+	Pojďme na tu druhou limitu, kde $x \to \frac{1}{2}$. Jak jsme viděli dříve, tak nám po dosazení vyšel výsledek ve tvaru $\frac{a}{0}$, což značí existenci asymptoty. V takovémhle případě si spočítáme jednostranné limity, a pokud se rovnají, považujeme ten výsledek za výsledek celé limity. Pokud by se jednostranné limity nerovnaly, tak limita neexistuje. Použijeme už tu upravenou limitu z předchozího příkladu, abychom se nezdržovali:
+	
+	\begin{align*}
+		\lim_{x \to \frac{1}{2}^{(-)}} \frac{2x^2-6x-8}{1-x-2x^2} &= - \lim_{x \to \frac{1}{2}^{(-)}} \frac{x - 4}{x - \frac{1}{2}} \\
+		&= - \lim_{x \to \frac{1}{2}^{(-)}} \frac{-}{-} \\
+		&= - \infty
+	\end{align*}
+	
+	Nyní se budeme ptát: Jak se budou měnit znaménka, když půjdu k $\frac{1}{2}$ zleva? Tak v čitateli bude znaménko záporné, protože se vždycky odečte -4. Ve jmenovateli bude znaménko také záporné, protože dosazujeme za $x$ číslo \textit{o něco menší} než $\frac{1}{2}$.
+	
+	\begin{align*}
+		\lim_{x \to \frac{1}{2}^{(+)}} \frac{2x^2-6x-8}{1-x-2x^2} &= - \lim_{x \to \frac{1}{2}^{(+)}} \frac{x - 4}{x - \frac{1}{2}} \\
+		&= - \lim_{x \to \frac{1}{2}^{(+)}} \frac{-}{+} \\
+		&= - (- \infty) \\
+		&= \infty
+	\end{align*}
+	
+	Jak vidíme, jednostranné limity se nerovnají (nemají stejný výsledek), tudíž limita v tomto bodě neexistuje. Funkce se kolem tohoto bodu chová tak, že zprava roste do nekonečna, a zleva roste do mínus nekonečna.
+	
+	\pagebreak
+	
+	\section{Nevlastní limita}
+	Nevlastní limita je taková limita, kde se $x \to \pm \infty$. Jejich řešení se liší od vlastních limit, a proto jsou ve vlastní sekci. U řešení nevlastních limit chceme místo úprav spoléhat na fakt, že $lim_{x\to\infty} \frac{1}{x} = 0$, takže v případě polynomu všechno dostat do tvaru $\frac{a}{x}$ a použít větu o aritmetice limit. Tuhle limitu budeme řešit od začáku, protože během našich úprav se nenaskytla situace, kdybychom vyštípali $x$ z čitatele.
+	
+	Obecný postup je takový, že vytkenem nejvyšší mocninu v čitateli a jmenovateli, a poté krátíme:
+	
+		\begin{align*}
+		\lim_{x \to \infty} \frac{2x^2-6x-8}{1-x-2x^2} 
+		&= \lim_{x \to \infty} \frac{x^2 \cdot (2 - \frac{6}{x} - \frac{8}{x^2})}{x^2 \cdot (\frac{1}{x^2}-\frac{1}{x}-2)} \\
+		&= \lim_{x \to \infty} \frac{2 - \frac{6}{x} - \frac{8}{x^2}}{\frac{1}{x^2}-\frac{1}{x}-2} \\
+		&= \frac{\lim_{x \to \infty} 2 - \lim_{x \to \infty} \frac{6}{x} - \lim_{x \to \infty} \frac{8}{x^2}}{\lim_{x \to \infty}\frac{1}{x^2}-\lim_{x \to \infty}\frac{1}{x}-\lim_{x \to \infty}2} \\
+		&= \frac{2 - 0 - 0}{0 - 0 - 2} \\
+		&= \frac{2}{-2} \\
+		&= -1
+	\end{align*}
+	
+\end{document}

@@ -1,0 +1,86 @@
+\documentclass[]{article}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[parfill]{parskip}
+\usepackage{titlesec}
+
+\titleformat{\section}[display]
+{\normalfont\normalsize\bfseries\centering}{Sekce \thesection.}{-0.5em}{}
+\titleformat{\subsection}
+{\normalfont\normalsize\itshape}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\normalsize\itshape}{\thesubsubsection.}{1em}{}
+
+\renewcommand\thesection{\Roman{section}}
+\renewcommand\thesubsection{\thesection.\Roman{subsection}}
+
+\setcounter{secnumdepth}{5}
+
+%opening
+\title{
+	{\textbf{Úlohy na pátek 16.8.2024}}
+}
+
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Zadání}
+	
+	\begin{enumerate}
+		\item Určete $a \cdot b$, je-li dána velikost vektorů a jejich úhlu $\varphi$. $|a| = 2$, $|b|=3$, $\varphi = 90^\circ$.
+		\item Určete velikost úhlu mezi vektory $a$, $b$, je-li dána velikost $|a| = 2$, $|b| = 3$, $a \cdot b = -3\cdot\sqrt{3}$ 
+		\item Určete chybějící souřadnici vektoru $u = (2, u_2)$ tak, aby byl kolmý k vektoru $v = (1, 2)$.
+		\item Určete vektor $u$ tak, aby měl velikost 10 a přitom byl kolmý k danému vektoru $v = (-1, 2)$.
+		\item Jsou dány vrcholy trojúhelníku ABC. Určete velikosti jeho vnitřních úhlů a obsah. $A[1, 0], B[2,0], C[2, \sqrt{3}]$.
+		\item Vypočtěte souřadnice vektorového součinu $u \times v$, je-li
+		\begin{enumerate}
+			\item $u = (2, -1, 3), v = (3, 2, -2)$
+			\item $u = (-4, -6, 0), v = (2, -7, 0)$
+			\item $u = (1, -2, 3), v = (-2, 4, -6)$
+		\end{enumerate}
+		\item Jsou dány body $A=[0,1,3], B[2,0,-1], C[1,-2,0]$. Určete souřadnice normálového vektoru roviny ABC.
+	\end{enumerate}
+	
+	\pagebreak
+	\section{Nápovědy}
+	
+	\begin{enumerate}
+		\item Určete $a \cdot b$, je-li dána velikost vektorů a jejich úhlu $\varphi$. $|a| = 2$, $|b|=3$, $\varphi = 90^\circ$.
+		\begin{enumerate}
+			\item Jaké znáš vzorečky skalárního součinu vektorů?
+			\item Můžeme si nějak $a \cdot b$ vyjádřit ze vzorečku skalárního součinu?
+		\end{enumerate}
+		\item Určete velikost úhlu mezi vektory $a$, $b$, je-li dána velikost $|a| = 2$, $|b| = 3$, $a \cdot b = -3\cdot\sqrt{3}$ 
+		\begin{enumerate}
+			\item Opět si připomeň vzoreček skalárního součinu
+			\item Literally jenom dosaď.
+		\end{enumerate}
+		\item Určete chybějící souřadnici vektoru $u = (2, u_2)$ tak, aby byl kolmý k vektoru $v = (1, 2)$
+		\begin{enumerate}
+			\item Kolmé vektory nemusíme dlouhosáhle počítat - jaká je finta na jeho vytvoření?
+			\item První souřadnice $u$ je 2 - vynásob si $v$ dvojkou, aby bylo vidět, co za číslo tam hodit.
+		\end{enumerate}
+		\item Určete vektor $u$ tak, aby měl velikost 10 a přitom byl kolmý k danému vektoru $v = (-1, 2)$.
+		\begin{enumerate}
+			\item Stejně jako v předchozí úloze - najít kolmý vektor pomocí otočení znaménka jedné ze souřadnic.
+			\item Velikost závisí na souřadnicích. Pokud má mít velikost 10, musí ti pod odmocninou vyjít 100.
+		\end{enumerate}		
+		\item Jsou dány vrcholy trojúhelníku ABC. Určete velikosti jeho vnitřních úhlů a obsah. $A[1, 0], B[2,0], C[2, \sqrt{3}]$.
+		\begin{enumerate}
+			\item Z bodů si vytvoř vektory, které budou reprezentovat jednotlivé strany trojúhelníka.
+			\item Velikost vnitřních úhlů spočítáš jako úhel mezi vektory stran.
+			\item Velikost úhlu mezi vektory spočítáš pomocí skalárního součinu.
+		\end{enumerate}
+		\item Vypočtěte souřadnice vektorového součinu $u \times v$, je-li
+		\begin{enumerate}
+			\item Najdi si vzoreček pro výpočet vektorového součinu.
+		\end{enumerate}
+		\item Jsou dány body $A=[0,1,3], B[2,0,-1], C[1,-2,0]$. Určete souřadnice normálového vektoru roviny ABC.
+		\begin{enumerate}
+			\item Normálový znamená kolmý.
+			\item Vypočítat kolmý vektor k $n$ dalším vektorům lze pomocí vektorového součinu.
+		\end{enumerate}
+	\end{enumerate}
+\end{document}

@@ -1,0 +1,89 @@
+\documentclass[]{article}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[parfill]{parskip}
+\usepackage{titlesec}
+
+\titleformat{\section}[display]
+{\normalfont\normalsize\bfseries\centering}{Sekce \thesection.}{-0.5em}{}
+\titleformat{\subsection}
+{\normalfont\normalsize\itshape}{\thesubsection.}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\normalsize\itshape}{\thesubsubsection.}{1em}{}
+
+\renewcommand\thesection{\Roman{section}}
+\renewcommand\thesubsection{\thesection.\Roman{subsection}}
+
+\setcounter{secnumdepth}{5}
+
+%opening
+\title{
+	{\textbf{Úlohy na sobotu 17.8.2024}}
+}
+
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Zadání}
+	
+	\begin{enumerate}
+		\item Napiště parametrické vyjádření přímky určené bodem $A$ a směrovým vektorem $a$.
+		\begin{enumerate}
+			\item $A[3, -7], a = (2, -1)$
+			\item $A[4,0], a = (0,5)$
+		\end{enumerate}
+		\item Napiště parametrické vyjádření přímky $AB$, polopřímky $AB$, úsečky $AB$ a polopřímky $BA$, jsou-li dány souřadnice bodů $A$, $B$.
+		\begin{enumerate}
+			\item $A[2, -7], B[-3, 1]$
+			\item $A[3, -1], B[-2, -1]$
+		\end{enumerate} 
+		\item Sestavte obecnou rovnici přímky, která je určena
+		\begin{enumerate}
+			\item bodem $A[-3, 2]$ a normálovým vektorem $n=(2,1)$
+			\item bodem $A[-3, 2]$ a směrovým vektorem $s=(3,-2)$
+			\item body $A[-3, 2]$ a $A[-2, 4]$
+			\item parametrickým vyjádřením: $x = 2 - t, y = -3 + 2t$
+		\end{enumerate}
+		
+		\item Je dáno parametrické vyjádření přímky $p: x = -2 + t, y = 2 - 2t$ a body $A[2, -6], B[0,4], C[3, c_2]$.
+		\begin{enumerate}
+			\item Rozhodněte, který z bodů $A, B$ leží na přímce $p$.
+			\item Určete chybějící souřadnici $c_2$ tak, aby $C \in p$.
+			\item Určete průsečíky přímky $p$ s osami $x$ a $y$.
+		\end{enumerate}
+	\end{enumerate}
+	
+	\pagebreak
+	\section{Nápovědy}
+	
+	\begin{enumerate}
+		\item Napiště parametrické vyjádření přímky určené bodem $A$ a směrovým vektorem $a$.
+		\begin{enumerate}
+			\item Parametrické vyjádření přímky $p$ je jako $p: X = A + a\cdot t$, kde $A$ je bod a $a$ je směrový vektor.
+			\item Parametrické vyjádření přímky lze napsat vektorově jako jednu rovnici, nebo pro každou souřadnici zvlášť (co souřadnice to rovnice).
+		\end{enumerate}
+		\item Napiště parametrické vyjádření přímky $AB$, polopřímky $AB$, úsečky $AB$ a polopřímky $BA$, jsou-li dány souřadnice bodů $A$, $B$.
+		\begin{enumerate}
+			\item Polopřímka $AB$ je přímka, která začíná v bodě $A$ a jde přes bod $B$ až do nekonečna. Naopak polopřímka $BA$ začíná v bodě $B$ a jde přes bod $A$ až do nekonečna.
+			\item Úloha spočívá v omezení parametru $t$.
+			\item Když má být vyjádřena polopřímka, nesmí být parametr záporný (kdyby to bylo možné, tak by se vektor otočil za počáteční bod)
+			\item Když má být vyjádřena úsečka, tak směrový vektor může být jenom v rozsahu $\left<0, 1\right>$. Kdyby byl záporný, tak jde na druhou stranu, a kdyby byl větší než 1, tak úsečku "přeroste" ven.
+		\end{enumerate} 
+		\item Sestavte obecnou rovnici přímky, která je určena
+		\begin{enumerate}
+			\item Obecná rovnice přímky je $p: ax + by + c = 0$, kde $a, b$ jsou souřadnice normálového vektoru, a $x, y$ souřadnice výchozího bodu. Nezapomeň z toho dopočítat parametr $c$.
+			\item Směrový vektor je kolmý na vektor normálový.
+			\item Vytvoř směrový vektor mezi těmito dvěma body
+			\item Vytahej si z předpisu parametrické přímky směrový vektor a bod, a postupuj jako v druhé podúloze.
+		\end{enumerate}
+		
+		\item Je dáno parametrické vyjádření přímky $p: x = -2 + t, y = 2 - 2t$ a body $A[2, -6], B[0,4], C[3, c_2]$.
+		\begin{enumerate}
+			\item Stačí dosadit souřadnice do rovnic a kouknout, jestli je ve všech rovnicích stejný parametr $t$.
+			\item Stačí dosadit do rovnice pro $x$-ovou souřadnici trojku, spočítat $t$ a dosadit do rovnice pro $y$.
+			\item Zde se nedosazují souřadnice bodu, ale nuly. Nejdříve jenom za $x$, a potom jenom za $y$.
+		\end{enumerate}
+	\end{enumerate}
+\end{document}
