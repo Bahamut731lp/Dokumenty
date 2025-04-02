@@ -17,3 +17,6 @@
 **/*.svn
 **/*.toc
 **/*.synctex*
+**/*.nav
+**/*.snm
+**/*.vrb
