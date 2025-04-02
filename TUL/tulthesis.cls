@@ -79,6 +79,7 @@
 \DeclareOption{bwtitles}{\PassOptionsToPackage{\CurrentOption}{tul}}
 \DeclareOption{bw}{\PassOptionsToPackage{\CurrentOption}{tul}}
 \DeclareOption{fonts}{\PassOptionsToPackage{\CurrentOption}{tul}}
+\DeclareOption{localfonts}{\PassOptionsToPackage{\CurrentOption}{tul}}
 \DeclareOption{sfheadings}{\PassOptionsToPackage{\CurrentOption}{tul}}
 \newif\ifTUL@pdf
 \TUL@pdftrue
