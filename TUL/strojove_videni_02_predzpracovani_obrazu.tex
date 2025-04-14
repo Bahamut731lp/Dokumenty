@@ -1,0 +1,109 @@
+\documentclass[FM]{tulpresentation}
+
+\title{Předzpracování obrazu}
+\author{Bc. Kevin Daněk}
+
+\begin{document}
+	
+	\TULtitleframe
+	
+	\begin{frame}
+		\frametitle{Motivace}
+	    \begin{itemize}
+	      \item Při pořízení obrazu je více či méně zatížen vadami
+	      \begin{itemize}
+	      	\item Nežádoucí šum
+	      	\item Optické zkreslení
+	      	\item Nevýrazné charakteristiky
+	      \end{itemize}
+	      \item \textbf{Předzpracování} se snaží tyto vady odstranit
+	      \begin{itemize}
+	      	\item Výsledkem je obraz, který je lepší pro samotné vyhodnocení
+	      \end{itemize}
+	    \end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Kroky předzpracování}
+		\begin{itemize}
+			\item \textbf{Změna barevného prostoru} - Odstranění dat, které nám nic neříkají
+			\item \textbf{Filtrace šumu} - Vyhlazení okolních hodnot pixelů
+			\item \textbf{Jasová korekce} - Úpravy intenzity pixelů
+			\item \textbf{Geometrické transformace} - Změna perspektivy
+			\item \textbf{Zvýraznění klíčových charakteristik} - Důležité rysy, hrany, textury, ...
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Změna barevného prostoru}
+		\begin{itemize}
+			\item \textbf{Barevný prostor} popisuje barvy v obraze.
+			\item Barevný prostor se skládá z \textbf{barevných kanálů}.
+			\begin{itemize}
+				\item Každý kanál obsahuje intenzitu dané složky.
+				\item \textit{RGB, CMYK, HSL, ...}
+			\end{itemize}
+			\item \textbf{Většina} algoritmů umí pracovat pouze s jedním barevným kanálem.
+			\begin{itemize}
+				\item Čím více kanálů, tím větší výpočetní a paměťové nároky
+			\end{itemize}
+			\item Je potřeba vybrat takový kanál, který obsahuje nejvíce užitečné informace.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Změna barevného prostoru}
+		\begin{itemize}
+			\item $Y(r,g,b) = 0.3r + 0.6g + 0.1b$
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Filtrace šumu}
+		\begin{itemize}
+			\item \textbf{Šum} = Náhodné změny v hodnotách diskrétní obrazové funkce.
+			\item Šum vzniká při
+			\begin{itemize}
+				\item sejmutí světlocitlivým senzorem
+				\item kvantizaci v AD převodníku
+				\item kompresi
+				\item výpočtech (zaokrouhlovací chyba)
+			\end{itemize}
+			\item Při snaze odstranit šum v obraze spoléháme na fakt, že sousední pixely mají stejnou nebo podobnou hodnotu.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Lineární filtrovací metody}
+		\begin{itemize}
+			\item Hodnota obrazového bodu se odhaduje z hodnot v jeho malém okolí.
+			\item \textbf{Linearita} = platí aditivita a homogenita.
+			\begin{itemize}
+				\item \textbf{Aditivita} $f(x + y) = f(x) + f(y)$
+				\item \textbf{Homogenita} $f(\alpha \cdot x) = \alpha \cdot f(x)$
+			\end{itemize}
+			\item Která operace vytváří lineární kombinace z okolí? \textbf{Konvoluce}.
+			\item Konvoluce se používá pro rozostření, zaostření a i zvýraznění charakteristik.
+			\item Nevýhodou těchto metod založených na 			konvoluci je to, že dochází k rozmazávání hran při náhlých změnech jasu.
+		\end{itemize}
+	\end{frame}
+  
+	\begin{frame}
+		\frametitle{Lineární filtrovací metody}
+		\begin{itemize}
+			\item Velikost okolí určuje \textbf{konvoluční jádro} $h(x, y)$.
+			\item Standardně se volí jádro o velikosti $3\times3$
+			\item Nevýhodou těchto metod založených na 			konvoluci je to, že dochází k rozmazávání hran při náhlých změnech jasu.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Lineární filtrovací metody}
+		\begin{itemize}
+			\item Velikost okolí určuje \textbf{konvoluční jádro} $h(x, y)$.
+			\item Standardně se volí jádro o velikosti $3\times3$
+			\item Nevýhodou těchto metod založených na 			konvoluci je to, že dochází k rozmazávání hran při náhlých změnech jasu.
+		\end{itemize}
+	\end{frame}
+  \TULendframe
+\end{document}

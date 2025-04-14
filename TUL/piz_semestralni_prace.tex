@@ -1,0 +1,81 @@
+\documentclass[FM,SP,localfonts]{tulthesis}
+% tento dokument používá balíky specifické pro XeLaTeX a lze jej přeložit
+% jen XeLaTeXem, nemáte-li instalována použitá (komerční) písma, změňte
+% nebo vymažte příkazy \set...font na následujících řádcích
+
+\newcommand{\verze}{2.3}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{czech}
+
+\usepackage{makeidx}
+\makeindex
+
+\usepackage{xunicode}
+\usepackage{xltxtra}
+% potřebuji neproporcionální kurzívu, kterou Noto Sans Mono zatím nemá
+% \setmonofont{Roboto Mono}
+
+\usepackage{parskip}
+\usepackage[backend=biber,urldate=short,style=iso-authoryear]{biblatex}
+\bibliography{piz}
+% příkazy specifické pro tento dokument
+\newcommand{\argument}[1]{{\ttfamily\color{\tulcolor}#1}}
+\newcommand{\argumentprom}[1]{\argument{\{\emph{#1}\}}}
+\newcommand{\argumentindex}[1]{\argument{#1}\index{#1}}
+\newcommand{\prostredi}[1]{\argumentindex{#1}}
+\newcommand{\prikazneindex}[1]{\argument{\textbackslash #1}}
+\newcommand{\prikaz}[1]{\prikazneindex{#1}\index{#1@\textbackslash #1}}
+\newenvironment{myquote}{\begin{list}{}{\setlength\leftmargin\parindent}\item[]}{\end{list}}
+\newenvironment{listing}{\begin{myquote}\color{\tulcolor}}{\end{myquote}}
+\newcommand{\polozka}[1]{\item[#1]\mbox{}\\}
+
+\clubpenalty=10000
+\widowpenalty=10000
+\sloppy
+
+% deklarace pro titulní stránku
+\TULtitle{Pohledová inspekce produktů s užitím hlubokého učení}{Visual product inspection with deep-learning}
+\TULauthor{Kevin Daněk}
+
+% pro bakalářské, diplomové a disertační práce
+\TULprogramme{N0613A140028}{Informační technologie}{Information technology}
+\TULbranch{N0613A140028AI}{Aplikovaná informatika}{Applied informatics}
+%\TULbranch{1802T008}{Nějaký jiný obor}{Some other branch}
+\TULsupervisor{Ing. Igor Kopetschke}
+%\TULconsultant{doc. RNDr. Pavel Satrapa, Ph.D.}
+%\TULconsultant{doc. RNDr. Druhý Konzultant, Ph.D.}
+%\TULconsultant{doc. RNDr. Třetí Konzultant, Ph.D.}
+\TULyear{2025}
+
+% pro habilitační práce
+%\TULbranch{}{Technická kybernetika}{Technical cybernetics}
+%\TULyear{2021}
+
+\begin{document}
+
+\ThesisStart{male}
+%\ThesisStart{zadani-a-prohlaseni.pdf}
+
+\phantomsection\addcontentsline{toc}{section}{Obsah}
+\tableofcontents
+
+\clearpage
+
+\begin{abbrList}
+\textbf{TUL} & Technická univerzita v~Liberci \\
+\textbf{FM} & Fakulta mechatroniky, informatiky a mezioborových studií
+Technické univerzity v~Liberci \\
+\end{abbrList}
+
+\chapter{Kde jsem hledal}
+
+Návody tohoto typu poměrně často obsahují úvod do \LaTeX u jako takového. Já se
+s~dovolením omezím jen na popis samotné třídy \argument{tulthesis} a budu
+předpokládat, že jste v~otázkách \LaTeX u dostatečně zorientováni. Pokud
+to není pravda, snad vám pomůže můj \emph{\LaTeX\ pro pragmatiky}, který
+najdete na adrese:
+
+\printbibliography[title={Reference}]
+
+\end{document}
