@@ -242,18 +242,11 @@
 \newcommand{\oddel}{{\color{\tulcolor}\rule{1pt}{1.7ex}}}
 
 % styl a barva nadpisu
-\RequirePackage[sf, bf]{titlesec}
-
-\newcommand{\TUL@headfnt}{\TULmono\bfseries}
-
-\@ifundefined{chapter}{}{\titleformat*{\chapter}{\color{\titlecolor}\TUL@headfnt\LARGE\raggedright}}
-
-\@ifundefined{section}{}{
-	\titleformat{\section}
-	{\textcolor{\titlecolor}{\TUL@headfnt\Large\raggedright}}
-	{} % Label
-	{0pt} % Space
-	{} % Before-code
+\@ifclassloaded{beamer}{}{
+  \RequirePackage[sf, bf]{titlesec}
+  \newcommand{\TUL@headfnt}{\TULmono\bfseries}
+  \@ifundefined{chapter}{}{\titleformat*{\chapter}{\color{\titlecolor}\TUL@headfnt\LARGE\raggedright}}
+  \@ifundefined{section}{}{\titleformat*{\section}{\color{\titlecolor}\TUL@headfnt\Large\raggedright}}
 }
 
 % titulni stranka

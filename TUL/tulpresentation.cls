@@ -152,6 +152,15 @@
 }
 \makeatother
 
+% Změna odsazení mezi odrážkami
+\newenvironment{items}
+  {\begin{itemize} \setlength{\itemsep}{0.75\baselineskip} \setlength{\parskip}{0pt} \setlength{\parsep}{0pt}}
+  {\end{itemize}}
+
+\newenvironment{subitems}
+  {\vspace{0.5em}\begin{items}}
+  {\end{items}}
+
 \usepackage{changepage}
 
 %============================================================================
@@ -177,7 +186,7 @@
           
         \vspace*{0.07\textheight}    
           
-        \textbf{\LARGE\insertsubtitle}
+        {\Large\insertsubtitle}
       \end{minipage}   
     };    
     \node[above right,inner sep=20pt] at (current page.south west){  
@@ -244,7 +253,6 @@
           
         \vspace*{0.07\textheight}    
           
-        \textbf{\LARGE\insertsubtitle}
       \end{minipage}   
     };
   \end{tikzpicture}
