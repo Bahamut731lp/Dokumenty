@@ -1,0 +1,68 @@
+\documentclass[a4paper,12pt,twoside,FM]{article}
+% tento dokument používá balíky specifické pro XeLaTeX a lze jej přeložit
+% jen XeLaTeXem
+
+\newcommand{\verze}{2.3}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{czech}
+
+\usepackage{fontspec}
+\usepackage{xunicode}
+
+\usepackage{xltxtra}
+\usepackage{tabularx}
+
+\usepackage{makeidx}
+\makeindex
+
+% živé odkazy v PDF
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=tul, urlcolor=tul, citecolor=tul}
+\hypersetup{pdftitle={Návod k použití balíku tul pro LaTeX verze \verze}}
+
+\usepackage[fonts, noheader]{tul}
+\noTULfooter
+\TULname{Pavel Satrapa}
+\TULphone{+420\,485\,351\,234}
+\TULmail{Pavel.Satrapa@tul.cz}
+%\TULposition{prorektor pro informatiku}
+
+% definice příkazů a prostředí specifických pro tento dokument
+\newcommand{\cmdfont}[1]{\texttt{\color{\tulcolor}#1}}
+\newcommand{\cmdnoindex}[1]{\cmdfont{\textbackslash #1}}
+\newcommand{\cmd}[1]{\cmdnoindex{#1}\index{#1@\textbackslash #1}}
+\newcommand{\demobox}{\raisebox{-.20ex}{\rule{1em}{1em}}}
+
+\usepackage{enumitem}
+\newlist{itemize*}{itemize}{2}
+\setlist[itemize*]{itemsep=3pt, parsep=3pt, label=$\bullet$}
+\setlist[itemize*,2]{label={--}}
+
+\usepackage{parskip}
+\sloppy
+\widowpenalty=10000
+\clubpenalty=10000
+
+\newcommand{\cmddemo}[1]{\bigskip\parbox[c]{3.9cm}{\cmd{#1}}\parbox[c]{10cm}{\csname #1\endcsname}\bigskip}
+
+\begin{document}
+
+\TULfancytitlepage{Strojové vidění}
+{Kevin Daněk}
+{Liberec 2025}
+
+\section{Strojové vidění}
+Strojové vidění je název pro proces, ve kterém se získávají, zpracovávají a vyhodnocují digitální obrazy.
+
+\section{Digitální obraz}
+Představte si digitální obraz jako obrovskou mřížku, téměř jako tabulku. Tahle tabulka je tvořena malými barevnými body, kterým se říká pixely. Této tabulce obrazových bodů říkáme \textbf{matice pixelů}.
+
+Ačkoliv nazýváme digitální obraz maticí obrazových bodů, je tento název poněkud zavádějící, protože se skutečnou \textit{maticí} mají společnou pouze podobu. Pokud máte za sebou kurz lineární algebry, víte, že matice představuje lineární zobrazení, a jsou pro ní definovány určité operace a algoritmy. Všichni se asi shodneme, že provádět \textit{Gaussovu}, potažmo \textit{Gauss-Jordanovu eliminaci} na obrázku asi žádné ovoce nepřinese. Proto se na digitální obraz většinou díváme spíše jako na funkci — konkrétně na tzv. \textbf{diskrétní obrazovou funkci}.
+
+
+
+\section{title}
+
+\end{document}
+

@@ -215,6 +215,47 @@
 \makeatother
 
 %===============================================================================
+% NADPIS SEKCE
+%===============================================================================
+\makeatletter
+\newcommand{\TULsectionframe}[2]{
+  \setbeamercolor{background canvas}{bg=\tulcolor}
+  \setbeamertemplate{background canvas}{\pagecolor{\tulcolor}}
+  \begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[below right,inner sep=20pt] at (current page.north west){
+      \begin{minipage}[t]{\textwidth}
+        \scalebox{0.5}{\logotextwh}
+      \end{minipage}
+    };
+    \node[below left,inner sep=10pt] at (current page.north east){
+        \scalebox{0.5}{\symbolTULwh}
+    };
+    \node[below right,inner xsep=20pt,inner ysep=0.34\paperheight] at (current page.north west){ 
+      \begin{minipage}[t]{0.95\textwidth}
+        \color{white}
+        {\bf \Huge {#1}}
+          
+        \vspace*{0.07\textheight}    
+          
+        {\Large {#2}}
+      \end{minipage}   
+    };
+  \end{tikzpicture}
+  \end{frame}
+  
+  % Set white background to next slides
+  \setbeamercolor{background canvas}{bg=white}
+  % Add logo to slides
+  \addtobeamertemplate{background canvas}{
+    \raisebox{20pt}[0pt][0pt]{%
+      \hspace{20pt}\scalebox{0.4}{\logotext}%
+    }%
+  }
+}
+\makeatother
+
+%===============================================================================
 % ÚPRAVA BARVY TEXTU V OBSAHU 
 %===============================================================================
 \setbeamercolor{section in toc}{fg=\tulcolor}

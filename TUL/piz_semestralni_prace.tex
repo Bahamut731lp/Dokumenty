@@ -16,9 +16,9 @@
 % potřebuji neproporcionální kurzívu, kterou Noto Sans Mono zatím nemá
 % \setmonofont{Roboto Mono}
 
-\usepackage{parskip}
 \usepackage[backend=biber,urldate=short,style=iso-authoryear]{biblatex}
-\bibliography{piz}
+\addbibresource{piz_semestralni_prace.bib}
+
 % příkazy specifické pro tento dokument
 \newcommand{\argument}[1]{{\ttfamily\color{\tulcolor}#1}}
 \newcommand{\argumentprom}[1]{\argument{\{\emph{#1}\}}}
@@ -57,25 +57,65 @@
 \ThesisStart{male}
 %\ThesisStart{zadani-a-prohlaseni.pdf}
 
+\begin{abstractCZ}
+Tato zpráva popisuje třídu \texttt{tulthesis} pro sazbu absolventských prací
+Technické univerzity v~Liberci pomocí typografického systému \LaTeX.
+\end{abstractCZ}
+
+\begin{keywordsCZ}
+\LaTeX, třída, TUL
+\end{keywordsCZ}
+
+\vspace{2cm}
+
+\begin{abstractEN}
+This report describes the \texttt{tulthesis} package for Technical university of
+Liberec thesis typesetting using the \LaTeX\ typographic system.
+\end{abstractEN}
+
+\begin{keywordsEN}
+\LaTeX, class, TUL
+\end{keywordsEN}
+
+\clearpage
+
 \phantomsection\addcontentsline{toc}{section}{Obsah}
 \tableofcontents
 
 \clearpage
 
-\begin{abbrList}
-\textbf{TUL} & Technická univerzita v~Liberci \\
-\textbf{FM} & Fakulta mechatroniky, informatiky a mezioborových studií
-Technické univerzity v~Liberci \\
-\end{abbrList}
+\chapter{Proč jsem něco hledal}
+Téma pohledové inspekce produktů je mi velmi blízké. Denně na něj narážím ve své profesní praxi a zajímalo mě, jakým způsobem je tato oblast reflektována v odborné literatuře a zda mohu načerpat cenné poznatky pro svou budoucí diplomovou práci. Ve společnosti CLOUDCODE se věnuji návrhu architektury inspekčních systémů a vývoji uživatelského rozhraní pro aplikace v oblasti strojového vidění. Od roku 2018 mám možnost pravidelně se setkávat s výrobními linkami, na kterých jsou moderní techniky pohledové inspekce využívány v praxi, a sledovat, jak rychle se tyto technologie vyvíjejí.
+
+Problematice strojového vidění a jeho využití pro pohledovou inspekci jsem se podrobněji věnoval již ve své bakalářské práci. Tato zkušenost mě přirozeně vedla k hlubšímu zájmu o danou oblast. V rámci této semestrální práce jsem se chtěl podívat, jaké nové přístupy, metody a technologie jsou dnes k dispozici a jak jsou v odborných kruzích prezentovány a diskutovány.
+
+\chapter{Co jsem hledal aneb vyhledávací dotaz}
+Jako výchozí dotaz jsem zvolil klíčová slova \textit{„Product inspection“}. Tam jsem narazil na svoji perlu v podobě \parencite{Kim2021}. S tímto dotazem jsem listoval výsledky.
+
+Abych rozšířil spektrum vyhledaných prací směrem k moderním technologiím, zaměřil jsem se i na specifické dotazy spojené s využitím hlubokého učení při inspekcích. Konkrétně jsem použil dotazy \textit{„quality inspection deep learning“} a \textit{„automated visual inspection deep learning“}. Tyto klíčové výrazy mi pomohly najít publikace \parencite{Gutierrez2021, Huetten2024}.
+
+Celkově jsem se snažil přistupovat k rešerši kombinací cílených vyhledávacích dotazů a strukturovaného rozšiřování pomocí  souvisejících a citovaných zdrojů.
 
 \chapter{Kde jsem hledal}
+Při vyhledávání jsem primárně využil nástroj Google Scholar. Během procházení výsledků mě zaujal zejména článek \textit{„Product Inspection Methodology via Deep Learning: An Overview“} \parencite{Kim2021}, který se mi jevil jako perla pro mojí další rešerši.
 
-Návody tohoto typu poměrně často obsahují úvod do \LaTeX u jako takového. Já se
-s~dovolením omezím jen na popis samotné třídy \argument{tulthesis} a budu
-předpokládat, že jste v~otázkách \LaTeX u dostatečně zorientováni. Pokud
-to není pravda, snad vám pomůže můj \emph{\LaTeX\ pro pragmatiky}, který
-najdete na adrese:
+Dále jsem se zaměřil na články, které článek \parencite{Kim2021} cituje, konkrétně \parencite{Wei2018} a \parencite{Zhang2018}, a poté jsem se podíval na související články. Tento postup mi umožnil objevit další zdroje.
 
+\chapter{Výsledek}
+Výsledkem mého bádání je vesměs 15 dokumentů, které se více či méně zaobírají pohledovou inspekcí pomocí hlubokého učení. Z moje perly se po hlubším přečtení vyklubala jenom vyschlá škeble, která má hezký abstrakt, hezký obrázky, hezký nadpisy, ale nic revolučního, ani prakticky použitelnýho, nepřináší. Na pozitivní notu musím poznamenat, že jsem se díky této rešerši dozvěděl o algoritmu \textit{Grad-Cam} a idee vytvářet syntetická trénovací data \parencite{Gutierrez2021}.
+
+\chapter{Vyhodnocení}
+Zcela uprímně mi tento druh rešerše moc nevyhovuje. Líbí se mi to, že vykopíruju DOI nebo ISBN a mám všechny revelantní údaje, ovšem u odborných zdrojů bývá tolik nezajímavé omáčky. Chápu potřebu znít odborně a vědecky, ovšem tento přístup mi je proti srsti. Vždycky si pak vzpomentu na \textit{XKCD 2456} a na žertovný článek s názvem \href{https://agnd.net/valpo/340/impressive.html}{How to be more impressive}, který krásně vyobrazuje potřebu všechno zbytečně komplikovat.
+
+Svoje rešerše zpravidla tvořím tak, že si na dané téma vytvořím myšlenkovou mapu, ve které pomocí \textit{brainstormingu} vypíšu relevantní okruhy. Z této myšlenkové mapy vytvářím na okruhy menší rešerše tak, abych dostal základní pojem o problematice. Poté, co cítím, že mám dost informací, začnu vytvářet základní osnovu práce z daných témat tak, aby na sebe jednotlivé celky navazovaly. Následně iteruji nad danou strukturou a dohledávám ke každému okruhu relevantní zdroje.
+
+Příkladem může být moje bakalářská práce, kterou jsem měl na téma rapidního vývoje algoritmů strojového vidění. Myšlenková mapa rostla zejména do tří větví, a to je \textit{strojové vidění}, \textit{rapid prototyping} a \textit{potřeby společnosti CLOUDCODE}. Konkrétní obrázek své mapy již nemám, ovšem každé téma se mi dále rozvíjelo, dokud jsem necítil, že jsem nalezl základní okruhy (např. u strojového vidění pojem diskrétní obrazové funkce a barevné modely). Z této myšlenkové mapy jsem vytvořil základní osnovu, kterou jsem následně lehce upravoval podle nalezených zdrojů k původním tématům.
+
+Během semestru jsem si vyzkoušel ještě ScienceDirect a Scopus, které se mi osvědčily jako dobré zdroje statistiky a relevantních zdrojů. Nejvíce si ale odnáším zkušenost s programem \textit{JabRef}, který je na správu citací fajn a rozhodně příjemnější alternativou než dělat citace v editoru TexStudio a nebo je manuálně editovat v  \texttt{.bib} souboru. O tom víc musím ocenit Jabref poté, co jsem prakticky vzato upustil od kancelářských balíků (vyjma tabulkových procesorů) a všechny dokumenty píši převážně v \LaTeX.
+
+Pro citaci používám převážně příkaz \texttt{parencite}. Abych doplnil kompletně seznam zdrojů, použil jsem \texttt{nocite\{*\}}.
+
+\nocite{*}
 \printbibliography[title={Reference}]
 
 \end{document}
