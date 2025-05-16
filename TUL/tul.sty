@@ -65,7 +65,7 @@
 \newcommand{\TULposition}[1]{\renewcommand{\TULkontakt@pos}{#1}}
 \newcommand{\TULkontakt@mail}{info@tul.cz}
 \newcommand{\TULmail}[1]{\renewcommand{\TULkontakt@mail}{#1}}
-\newcommand{\TULkontakt@phone}{+420 485 351 111}
+\newcommand{\TULkontakt@phone}{}
 \newcommand{\TULphone}[1]{\renewcommand{\TULkontakt@phone}{#1}}
 \newcommand{\TUL@URL}{www.tul.cz}
 \newcommand{\TUL@adr}{{Studentsk\'a 1402/2, 461~17 Liberec~1\add@cz}}
@@ -99,7 +99,7 @@
         \raisebox{-0.7cm}[0pt]{\vbox{
             \ifthenelse{\equal{\TULkontakt@name}{}}{}{\TULkontakt@name\ |
             \ifthenelse{\equal{\TULkontakt@pos}{}}{\unskip{}}{\TULkontakt@pos\ |}}
-            \TULkontakt@phone\ | \TULkontakt@mail\\
+            \ifthenelse{\equal{\TULkontakt@phone}{}}{\unskip{}}{\TULkontakt@phone\ |} \TULkontakt@mail\\
             \TUL
             \ifthenelse{\equal{\CZTUL}{\CZTULsoucast}}{}{ | \TULsoucast}\\
             \TUL@adr\ | \TUL@URL}}}

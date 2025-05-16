@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt,twoside,FM]{article}
+\documentclass[a4paper, 12pt,twoside,FM]{article}
 % tento dokument používá balíky specifické pro XeLaTeX a lze jej přeložit
 % jen XeLaTeXem
 
@@ -19,13 +19,10 @@
 % živé odkazy v PDF
 \usepackage{hyperref}
 \hypersetup{colorlinks=true, linkcolor=tul, urlcolor=tul, citecolor=tul}
-\hypersetup{pdftitle={Návod k použití balíku tul pro LaTeX verze \verze}}
+\hypersetup{pdftitle={Strojové vidění}}
 
 \usepackage[fonts, noheader]{tul}
 \noTULfooter
-\TULname{Pavel Satrapa}
-\TULphone{+420\,485\,351\,234}
-\TULmail{Pavel.Satrapa@tul.cz}
 %\TULposition{prorektor pro informatiku}
 
 % definice příkazů a prostředí specifických pro tento dokument
@@ -59,8 +56,6 @@ Strojové vidění je název pro proces, ve kterém se získávají, zpracováva
 Představte si digitální obraz jako obrovskou mřížku, téměř jako tabulku. Tahle tabulka je tvořena malými barevnými body, kterým se říká pixely. Této tabulce obrazových bodů říkáme \textbf{matice pixelů}.
 
 Ačkoliv nazýváme digitální obraz maticí obrazových bodů, je tento název poněkud zavádějící, protože se skutečnou \textit{maticí} mají společnou pouze podobu. Pokud máte za sebou kurz lineární algebry, víte, že matice představuje lineární zobrazení, a jsou pro ní definovány určité operace a algoritmy. Všichni se asi shodneme, že provádět \textit{Gaussovu}, potažmo \textit{Gauss-Jordanovu eliminaci} na obrázku asi žádné ovoce nepřinese. Proto se na digitální obraz většinou díváme spíše jako na funkci — konkrétně na tzv. \textbf{diskrétní obrazovou funkci}.
-
-
 
 \section{title}
 

@@ -1,0 +1,159 @@
+\documentclass[a4paper,12pt,twoside,FP]{article}
+% tento dokument používá balíky specifické pro XeLaTeX a lze jej přeložit
+% jen XeLaTeXem
+
+\renewcommand{\title}{Vývoj moderních technologií a vzdělávání v českých školách}
+\renewcommand{\author}{Simona Šulcová}
+
+\newcommand{\verze}{2.3}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{czech}
+
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{tabularx}
+
+\usepackage[backend=biber,urldate=short,style=iso-authoryear]{biblatex}
+\bibliography{vyvoj_modernich_technologii_na_vzdelavani_refs}
+
+% živé odkazy v PDF
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=tul, urlcolor=tul, citecolor=tul}
+\hypersetup{pdftitle={\title}}
+
+\usepackage[fonts,noheader]{tul}
+\TULname{\author}
+\TULphone{}
+\TULmail{simona.sulcova@tul.cz}
+%\TULposition{prorektor pro informatiku}
+
+% definice příkazů a prostředí specifických pro tento dokument
+\newcommand{\cmdfont}[1]{\texttt{\color{\tulcolor}#1}}
+\newcommand{\cmdnoindex}[1]{\cmdfont{\textbackslash #1}}
+\newcommand{\cmd}[1]{\cmdnoindex{#1}\index{#1@\textbackslash #1}}
+\newcommand{\demobox}{\raisebox{-.20ex}{\rule{1em}{1em}}}
+
+\usepackage{enumitem}
+\newlist{itemize*}{itemize}{2}
+\setlist[itemize*]{itemsep=3pt, parsep=3pt, label=$\bullet$}
+\setlist[itemize*,2]{label={--}}
+
+\usepackage{parskip}
+\sloppy
+\widowpenalty=10000
+\clubpenalty=10000
+
+\newcommand{\cmddemo}[1]{\bigskip\parbox[c]{3.9cm}{\cmd{#1}}\parbox[c]{10cm}{\csname #1\endcsname}\bigskip}
+
+\begin{document}
+
+\TULfancytitlepage{\title}
+{\author}
+{Liberec 2025}
+
+\tableofcontents
+\clearpage
+
+\section{Úvod}
+Již od počátku věků se člověk neustále učí. Od lezení po stromech přes chození po zemi až k vývoji AI. Vzdělávání jako takové se neustále vyvíjí spolu s technologickým pokrokem, který má vliv i nejen na české školství.
+
+Ačkoliv by se školství v rámci vzdělávacího procesu bez technologí obešlo, tak mu technologie nabízí možnosti, které posouvají kvalitu vzdělávání výše. Moderní technologie postupně mění způsoby, jak se člověk učí, sdílí informace a komunikuje. Ovšem podíváme-li se do minulosti, tak principy vzdělávání jsou invariantní vůči reformám a změnám. Postupně se však technologie zavádějí i do školských zákonů a dokumentů a spousta odborníků a učitelů vyzývají ostatní pedagogiky, aby se podíleli na modernějších přístupech ve výuce. Vyvíjí se nové metody, prostředky a techniky ve vzdělávání.
+
+Vzdělávání je čím dál více dostupnější jako i hledání informací za pomoci sdílení znalostí a dovedností odborníků. Cílem této seminární práce je zhodnotit přínosy moderních technologií ve vzdělávání, zasadit je do historického kontextu a zamyslet se nad tím, jakou roli dosud hrají starší, více tradiční, metody. Práce nejprve lehce nastíní historický vývoji českého školství a technologií, následně popisuje moderní nástroje ve výuce, analyzuje nadále přítomnost tradičních metod a zamýšlí se nad výzvami budoucnosti.
+
+\section{Historický vývoj školství a technologií}
+Již ve starověku bylo lidem k dispozici písmo, kterým se tehdy zaznamenávaly převážně obchodní transakce a důležité události. Psaný materiál se šířil pouze pomocí ručních přepisů a lidí, kteří uměli číst, natož psát, nebylo mnoho.
+
+Ve středověku bylo školství v českých zemích především církevní záležitostí. Katedrální školy, klášterní školy a školy při farnostech poskytovaly výuku omezenému počtu žáků, převážně budoucím kněžím a členům církevní hierarchie. Výuka se soustředila na náboženství, latinu a základní gramotnost.
+
+V \textbf{15.století} přišla na svět první zásadní technologie pro školství, a tím byl knihtisk. Ruční přepisy knih vzdělanou částí populace byly nahrazeny odlitými písmeny, které urychlovali tisk textu.  Ve středověku se pouhá schopnost číst a psát považovala za vysokou vzdělanost. 
+
+Během \textbf{renesance a reformace (16. století)} se rozvíjely humanistické myšlenky, začaly vznikat školy s širší nabídkou předmětů. Kromě náboženství se začaly vyučovat dějiny, literatura, přírodní vědy a jazyky. Reforma vedla k rozvoji protestantských škol, které nabízely alternativu k tradičním katolickým institucím a kladly důraz na studium Bible v národních jazycích.
+
+V \textbf{době pobělohorské (17. století)} začalo kvůli rekatolizaci převládat katolické školství, a to zejména pod vlivem jezuitských škol. Jezuité se stali klíčovými vzdělavateli v českých zemích. Jejich školy se zaměřovaly na latinu, filozofii a teologii. Vzdělání bylo v tomto období privilegium vyšších vrstev a bylo silně centralizováno církví.
+
+Během \textbf{Habsburské vlády v 18. století} došlo k prvním pokusům o reformu školství pod jejich vládou. Maria Terezie a její syn Josef II. zahájili snahy o modernizaci školství, přičemž vzdělání se stále soustředilo na vyšší vrstvy. Prvotní změny však byly omezené a školství zůstalo stále elitářské se silným vlivem církve \footnote{\fullcite{Kasper2008}}.
+
+Od konce 18. století se české školství začalo zbavovat latiny a později němčiny jako vyučovacího jazyka kvůli šíření vzdělanosti v české populaci.
+
+Vývoj základního vzdělávání v éře socialismu měl svá pozitiva, ale i negativa. Mezi pozitivní stránky patřil koncept tzv. Jednotné školy, kdy její princip spočívá v poskytování veškeré mládeži rovnocenný obsah a kvalitu. Ovšem koncept obsahu se stal negativem pro české školství, a to ve 2 oblastech. Ve společenskovědních předmětech se objevoval deformovaný obsah a ve výuce cizích jazyků byl povinný jazyk ruština.
+
+Koncem roku 1947 přišel jeden z nejzásadnějších technologických průlomů, a to byl vynázel tranzistoru v utrobách Bell Labs. Tato součástka položila základy všem moderním technologiím tak, jak je známe dnes. Pokrok na sebe nenechal dlouho čekat a v roce 1958 přišel Jack Kilby s prvním integrovaným obvodem, ze kterého v 60. letech 20. století sestavil první příruční kalkulačku.\footnote{\fullcite{britannica_transistor}} \footnote{\fullcite{britannica_ic}} Příchod kalkulaček se projevil i do škol a odboural nutnost tabulovaných hodnot základních matematických funkcí v tabulkách pomocí číselných aproximací.
+
+\subsection{Vývoj školství v českých zemích v letech 1774–1989}
+Za vlády Marie Terezie byla v roce 1774 zavedena povinná školní docházka pro děti ve věku 6–12 let. Takzvaná Tereziánská školská reforma vytvořila tříúrovňový školní systém (triviální, hlavní, normální školy) a centralizovala školství pod státní kontrolu. Felbiger přispěl metodickými změnami, které zjednodušily výuku a učitelům poskytly pedagogické přípravy.
+
+Po smrti Marie Terezie a za vlády Josefa II. obnovila církev svůj vliv na školství, což vedlo k posílení náboženského aspektu výuky. Schulkodex z roku 1805 zdůraznil roli církve, i když povinné školní docházky přežily.
+
+V roce 1869 byl přijat školský zákon, který zavedl povinnou školní docházku do 14 let. Tento zákon posílil centralizaci a přispěl k rozvoji školství, které se však českých zemích se stále potýkalo s jazykovou diskriminací. Česká pedagogická hnutí usilovala o posílení češtiny ve školách. Zákon z roku 1883 podpořil dostupnost školství, ale jazyková otázka zůstala sporná.
+
+Po vzniku Československa byla zavedena reforma školství, která zahrnovala nový školský zákon z roku 1922. Tento zákon podpořil profesní rozvoj učitelů a vznikly pedagogické fakulty. Pokračoval vývoj progresivní pedagogiky zaměřené na individuální přístup k žákům.
+
+Během nacistické okupace byla česká škola podrobena germanizaci. Uzavřeny byly české vysoké školy a výuka podléhala ideologickým cílům okupantů.
+
+Po válce došlo k obnovení demokratických principů školství, avšak po komunistickém převratu v roce 1948 došlo k ideologizaci výuky. V 50. a 60. letech byla zavedena povinná devítiletá docházka a školství bylo podřízeno socialistickým ideálům. Polytechnická výchova a změny ve středním a vysokém školství byly součástí komunistických reforem \footnote{\fullcite{Vasicek2012}}.
+
+\clearpage
+\section{Současné moderní technologie ve výuce}
+Slovního spojení \textit{moderní technologie} je časově variantní a subjektivní. Vývoj technologií má v posledních desetiletích zásadní dopad nejenom na české školství. Zapojení technologií do výuky vede k zajištění lepšího vzdělání, usnadňují přístup k informacím, podporují kreativitu, spolupráci a kritické myšlení. Mezi moderní technologie zařazujeme:
+\begin{enumerate}
+	\item \textbf{Interaktivní tabule} - slouží k propojení tradiční výuku s digitálním obsahem. Učitelé mohou prezentovat multimedia (videa, prezentace nebo interaktivní aplikace). Žáci se mohou zapojit přímo do výuky pomocí dotykového ovládání. 
+	\item \textbf{Počítače a notebooky} - Učitelé i žáci je používají pro výzkum, psaní prací, analýzu dat a přípravu projektů. Důraz je kladen také na rozvoj digitálních dovedností, které jsou nezbytné pro ovládání těchto technologií.
+	\item \textbf{Tablety} - poskytují studentům přenosné zařízení, které mohou využívat pro studium, pro zábavu a kreativitu. Učitelé často využívají různé aplikace pro výuku, které umožňují zábavnou formu výuky a prohlubují digitální dovednosti
+	\item \textbf{E-learningové platformy} - e-learning se stal klíčovým prvkem vzdělávání, zejména v důsledku pandemie COVID-19. České školy začaly používat platformy jako Google Classroom, Moodle nebo EduPage, které umožňují učitelům správu platforem, posílání materiálů, komunikovat se studenty a sledovat jejich pokrok.
+	\item \textbf{3D tisk} - stal se populárním ve školách, díky tvorbě technických a uměleckých předmětů.. Umožňuje studentům realizovat své projekty od návrhu po výrobu, čímž rozvíjejí kreativitu a praktické dovednosti.
+	\item \textbf{Virtuální (VR) a rozšířená realita (AR)} - jsou technologie, které začínají mít své místo ve vzdělávání. Ty umožňují žákům prozkoumávat nové světy, zkoumat historické události nebo se účastnit simulovaných vědeckých experimentů. VR a AR zvyšují zájem o učivo.
+	\item \textbf{Robotika a programování} - robotické stavebnice, (LEGO Mindstorms nebo Ozobot), se v posledních letech staly důležitým článkem učebních Aktivity podporují základy programování, mechaniku, logické myšlení a týmovou práci.
+	\item \textbf{Vědecké laboratoře a experimentální vybavení} - modernizace školních laboratoří prostřednictvím pokročilého vědeckého vybavení, jako jsou digitální mikroskopy, spektrometry a simulátory, umožňuje studentům provádět experimenty a aplikovat teoretické znalosti v praxi.
+	\item \textbf{Digitalizace výukových materiálů a online výuka} - Digitální učení a gamifikace zvyšuje motivaci studentů \footnote{\fullcite{Zormanova2022}}. V mnoha školách se používají aplikace jako Kahoot nebo Quizlet, které umožňují studentům soutěžit a učit se zábavným způsobem.
+	\item \textbf{Online zdroje a databáze} - přístup k širokému spektru informací a vědeckých studií pro studenty i pro učitele, což podporuje samostatné učení a výzkum.\footnote{\fullcite{Kopecky2021}}
+\end{enumerate}
+
+Mezi moderní technologie ale můžeme zařadit i přístroje, které pomáhají studentům s postižením, poruchami učení nebo jinými překážkami, které těmto studentům znemožňují vzdělávání. Na MUNI v rámci střediska pro pomoc studentům se specifickými nároky Teiresiás vyvíjejí technologie, které těmto studentům výrazně pomohou ve studiu, ale také se stará o bezbariérovost prostředí.\footnote{\fullcite{MUNI2013}}
+
+Libor Klubal z portálu \textit{Učitelé učitelům} poukazuje i možné nevýhody Kahootu: \textit{„Je však nutné používat jej z rozmyslem. Určitě není vhodné využívat jen soutěžení, využijte jej i k domácí přípravě, hrajte kvízy opakovaně, ať dáte šanci většímu počtu žáků umístit se na předních místech.”}\footnote{\fullcite{Ucitele2020}}
+
+\subsection{Financování modernizace škol}
+Česká republika čerpá na modernizaci škol především dotace z EU. Z Evropského fondu pro regionální rozvoj půjde na modernizaci či rekonstrukci škol 3,2 miliard korun.\footnote{\fullcite{DotaceEU2022}} Z tohoto rozpočtu se staví nové školní budovy, rekonstruují staré areály a vybavují odborné učebny novými technologiemi. Pořizuje se také technika, která handicapovaným školákům na vozíčku usnadňuje každodenní cestu do třídy.
+
+Příkladem modernizace škol je Jablonec nad Nisou, který v rámci programu integrované územní investice aglomerace Liberec a Jablonec nad Nisou modernizuje učebny IT, fyziky, chemie na vybraných základních školách. Z tohoto programu se také financují i nová hřiště v mateřské škole Pod peřinkou. \footnote{\fullcite{ITI2025}}
+
+\section{Vývoj technologií ve výuce dějepisu a zeměpisu}
+Ve výuce dějepisu přinesly moderní technologie možnosti interaktivního poznávání minulosti – od využití digitálních časových os přes 3D rekonstrukce historických událostí až po přístup ke zdigitalizovaným archivním dokumentům. Díky videím, podcastům a animacím se mohou žáci snáze vcítit do dějinného kontextu a uceleně pochopit historické souvislosti.
+
+V zeměpise technologie umožňují práci s interaktivními mapami, satelitními snímky, geografickými databázemi a virtuálními prohlídkami světa. Učitelé mohou díky aplikacím jako Google Earth nebo ArcGIS zpřístupnit prostorová data a umožnit žákům prakticky pracovat s geografickými informacemi.
+
+Tyto nástroje podporují badatelsky orientovanou výuku, kritické myšlení a rozvoj digitální gramotnosti. V obou předmětech technologie napomáhají propojit výklad s praxí a přiblížit učivo současné generaci.
+
+GIS (Geografické informační systémy): GIS technologie umožňují historikům analyzovat prostorové vzorce a souvislosti v historických datech. Tato technologie se často používá v historické geografii a pro studium pohybu populací. GIS je počítačový systém (geografický informační systém), který slouží k práci s prostorovými daty (sběr, uložení, správa, analýza, vizualizace a sdělení). Tento systém se mění s vývojem moderních technologií
+
+\subsection{Zeměpis}
+Pravěk a starověk - mapy a kartografie Pavlova mapa 
+První jednoduché mapy vznikaly již v pravěku, kdy lidé zaznamenávali okolní krajinu. Starověké civilizace, jako například Babylóňané a Egypťané, vytvářely mapy zemědělské půdy a měst.V antickém Řecku byly vyvinuty podrobnější mapy a geografické teorie. Klaudios Ptolemaios zpracoval v 2. století n. l. mapy, které měly vliv na geografii až do renesance. V období středověku se rozvinuly navigační techniky, které umožnily poprvé systematické zkoumání a mapování oceánů. Používání astrolábů a kompasů usnadnilo námořní plavbu a objevování nových zemí. V 17. století se začaly rozvíjet metody geodézie, což je věda o měření a mapování Země. Johannes Kepler a Isaac Newton přispěli k pochopení tvaru Země a gravitačních sil. V 18. a 19. století byly vyvinuty topografické mapy, které poskytovaly informace o výškách, terénu a dalších geografických prvcích. Tyto mapy se staly základem pro vojenské a civilní plánování. Ve 20. století Alfred Wegener předložil teorii kontinentální drift, což vedlo k pochopení pohybu zemských desek a geologickým procesům. Od 60. let 20. století umožnily satelity a technologie dálkového průzkumu přístup k informacím o zemském povrchu a atmosféře v reálném čase. Umožnily sledování klimatických změn, využití přírodních zdrojů a urbanizaci. V 80. letech 20. století vznikly GIS, které umožňují shromažďovat, analyzovat a vizualizovat prostorová data, což zásadně změnilo způsob, jakým se provádí geografický výzkum a plánování. Globální polohové systémy (GPS): GPS technologie, vyvinuté v 70. letech, umožnily přesné určení polohy na Zemi, což mělo obrovský dopad na navigaci, dopravu a geodézii. Pokroky v počítačovém modelování umožnily geografům simulovat různé scénáře, například změny klimatu, urbanizaci nebo přírodní katastrofy. V posledních dekádách se rozvinuly nové směry geografického výzkumu zaměřené na environmentální otázky, což vedlo k inovacím v udržitelném rozvoji a ochraně životního prostředí. Tento historický vývoj v oblasti geografických technologií a teorii ukazuje, jak se naše znalosti o Zemi neustále vyvíjejí a jak nás technologické inovace vedou k lepšímu porozumění složitosti našeho světa.
+
+
+\subsection{Dějepis}
+Vynález písemnictví (např. klínové písmo v Mezopotámii a hieroglyfy v Egyptě) umožnil uchovávat a předávat historické informace. Záznamy, jako jsou obchodní účty, zákony a královské anály, zásadně přispěly k dokumentaci dějin. Jan Gutenberg vynález knihtisku. Vytváření archivů ve starověkých civilizacích (např. babylónské a egyptské archivy) umožnilo shromažďovat historické dokumenty, což usnadnilo studium minulosti. V 19. století se začala rozvíjet historická kritika, což je metoda analýzy historických zdrojů, která zahrnuje zkoumání autenticity a relevanci materiálů. Historici jako Leopold von Ranke přispěli k profesionalizaci dějepisu a k důrazu na používání primárních zdrojů.
+
+Moderní archeologie se V 19. století stala uznávanou vědou, jejíž metody (např. stratigrafie, radiokarbonová datace či letecká archeologie) umožnily lépe porozumět minulosti. Výzkumy na nalezištích, jako je Pompeje nebo Tutanchamonova hrobka, poskytly cenné informace o starověkých civilizacích. V 19. a 20. století se statistické metody staly důležitým nástrojem v historickém bádání, zejména v sociální historii, kde se historici spoléhají na demografická data a ekonomické statistiky k analýze historických trendů. Od konce 20. století se s rozvojem počítačových technologií a internetu začaly rozvíjet databáze, digitální archivy a online nástroje pro analýzu a vizualizaci historických dat.
+
+S nástupem audiovizuálních technologií se stalo možné představit historii prostřednictvím filmů, dokumentů, interaktivních webových stránek a vzdělávacích her. Tímto způsobem se historie stává přístupnější a atraktivnější pro širší publikum. Teoretické přístupy Aspekty jako gender, postkolonialismus a sociální spravedlnost: Inovace v teoretických přístupech k dějinám, například feministická historie nebo postkolonialismus, přetvářejí způsob, jakým historici zkoumají subjekty a narrativy.
+
+Historie veřejného zájmu Vytváření veřejných projektů: Historici čím dál tím více spolupracují s veřejností na společných projektech a vzpomínkových iniciativách, což pomáhá spojit akademickou a veřejnou historii a zlepšuje povědomí o historických událostech.
+
+\section{Vliv starších metod a pomůcek v současném vzdělávání}
+Navzdory technologickému pokroku neztrácejí tradiční metody svůj význam. Tištěné učebnice dávají jak žákům tak učitelům základní přehled těch nejdůležitější znalostí, které jsou do života potřeba a rozšiřují možnosti detailního učiva a jeho propojení v souvislostech se základním učivem. Mezi kognitivní funkce patří rozvoj motoriky i paměti, kterým dosáhneme ručním psaní poznámek do papírových sešitů, které napomáhají důkladnému uložení do paměti. Známou metodou vyučování je frontální výuka, která je běžnou součástí většiny českých škol, ale v posledních letech se snaží od ní upustit a nebo ji doplnit prací s moderními technologiemi. Dalšími metodami jsou např. memorování, či vyprávění (využívané hlavně v historii, k pochopení historické události). Tyto metody se používají i do dneška a budou se používat i nadále,. Ačkoliv např. memorování většina studiících nemá ráda, tak ve všech předmětech je potřeba se něco naučit nazpaměť, aby jsme se pak mohli posouvat dál a porozumět informacím. Tradiční formy učení, jako je čtení z knížek nebo práce s reálnými předměty (počítadlo a tabulky - dnes se používají v modernější formě a to, že se na ně nepíše křídou, ale fixou, stejně tak i na velkých tabulích), se stále používají zvláště na 1. stupni, protože mají didaktický a psychologický efekt.  V mnoha oborech, např. v přírodopisu nebo chemii, zůstává reálná manipulace s různými objekty nezastupitelná. I když se digitalizují knížky, tak stále nevymizelo chození do samotných knihoven, protože někteří lidé nemají schopnost zadat správný vyhledávací dotaz. Dále pak v historii, je docela dobrým zdrojem informací starší populace, která zažila události z minulých let a nebo mají fotky či dopisy. Díky dnešnímu celosvětovému propojení populace, se snáze vyhledávají a nacházejí tyto osoby.
+POROVNÁNÍ HISTORICKÉ A DNEŠNÍ TABULKY:
+
+
+\section{Závěr}
+Moderní technologie přinášejí do vzdělávání nové možnosti, zefektivňují výuku a rozšiřují dostupnost informací. Zároveň je však zřejmé, že tradiční metody a pomůcky si nadále udržují svůj pedagogický význam. Ideální výuka by proto měla využívat přínosů obou přístupů a vytvářet vyvážené prostředí pro rozvoj žáků v 21. století. Výuka dějepisu a zeměpisu může být díky technologiím názornější a poutavější, pokud bude vhodně kombinována s klasickými metodami.
+
+
+\clearpage
+\printbibliography[title={Reference}]
+
+\end{document}
+
